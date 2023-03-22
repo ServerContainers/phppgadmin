@@ -1,4 +1,4 @@
-FROM marvambass/apache2-ssl-secure:latest
+FROM ghcr.io/servercontainers/apache2-ssl-secure
 
 RUN apt-get -q -y update && \
     apt-get -q -y install php-pgsql \
