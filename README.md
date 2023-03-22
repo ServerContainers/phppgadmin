@@ -45,30 +45,30 @@ This container needs to connect to a database, so take a look at the `docker-com
 ## Environment variables and defaults
 
 * __DB\_HOST__
- * host of postgres db
- * default: `db`
+    * host of postgres db
+    * default: `db`
 
 * __DB\_PORT__
- * port of postgres db
- * default: `5432`
+    * port of postgres db
+    * default: `5432`
 
 * __DEFAULT\_DB__
- * set default db
- * default: `template1`
+    * set default db
+    * default: `template1`
 
 * __EXTRA\_LOGIN\_SECURITY__
- * since I want this container to be a usable in every situation it's `false` per default
- * if you want to use this container for a production/long-running environment, you might want to change this
- * default: `false`
+    * since I want this container to be a usable in every situation it's `false` per default
+    * if you want to use this container for a production/long-running environment, you might want to change this
+    * default: `false`
 
 ### BASEIMAGE: Environment variables and defaults
 
 * __DISABLE\_TLS__
- * default: not set - if set yo any value `https` and the `HSTS_HEADERS_*` will be disabled
+    * default: not set - if set yo any value `https` and the `HSTS_HEADERS_*` will be disabled
 
 * __HSTS\_HEADERS\_ENABLE__
- * default: not set - if set to any value the HTTP Strict Transport Security will be activated on SSL Channel
+    * default: not set - if set to any value the HTTP Strict Transport Security will be activated on SSL Channel
 
 * __HSTS\_HEADERS\_ENABLE\_NO\_SUBDOMAINS__
- * default: not set - if set together with __HSTS\_HEADERS\_ENABLE__ and set to any value the HTTP Strict Transport Security will be deactivated on subdomains
+    * default: not set - if set together with __HSTS\_HEADERS\_ENABLE__ and set to any value the HTTP Strict Transport Security will be deactivated on subdomains
 
