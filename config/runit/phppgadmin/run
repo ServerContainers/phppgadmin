@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ -z "$DB_HOST" ]; then
+  DB_HOST=db
+fi
+echo ">> using db host: $DB_HOST"
+sed -i "s/\[0\]\['host'\] = '.*/[0]['host'] = '$DB_HOST';/g" /var/www/html/phppgadmin/conf/config.inc.php
+
+if [ ! -z "$DB_PORT" ]; then
+  echo ">> using db port: $DB_PORT"
+  sed -i "s/= 5432/= $DB_PORT/g" /var/www/html/phppgadmin/conf/config.inc.php
+fi
+
+if [ ! -z "$DEFAULT_DB" ]; then
+  echo ">> setting default db: $DEFAULT_DB"
+  sed -i "s/\[0\]\['defaultdb'\] = '.*/[0]['defaultdb'] = '$DEFAULT_DB';/g" /var/www/html/phppgadmin/conf/config.inc.php
+fi
+
+if [ -z "$EXTRA_LOGIN_SECURITY" ]; then
+  EXTRA_LOGIN_SECURITY=false
+fi
+echo ">> using extra_login_security: $EXTRA_LOGIN_SECURITY"
+sed -i "s/conf\['extra_login_security'\] = .*/conf['extra_login_security'] = $EXTRA_LOGIN_SECURITY;/g" /var/www/html/phppgadmin/conf/config.inc.php
+
+echo ">> phppgadmin configured"
+sleep infinity
